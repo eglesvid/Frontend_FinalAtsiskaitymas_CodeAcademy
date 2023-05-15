@@ -4,6 +4,8 @@ import { useParams, Link } from "react-router-dom";
 import Navbar from "../../Home/Navbar/Navbar";
 import styles from "./EditClient.module.css";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export default function EditClient() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -15,7 +17,7 @@ export default function EditClient() {
 
   useEffect(() => {
     axios
-      .get(`https://backend-final-atsiskaitymas-code-academy.vercel.app/api/clients/${clientId}`)
+      .get(`${apiUrl}/api/clients/${clientId}`)
       .then((response) => {
         setFirstName(response.data.firstName);
         setLastName(response.data.lastName);
@@ -38,10 +40,7 @@ export default function EditClient() {
     };
 
     axios
-      .put(
-        `https://backend-final-atsiskaitymas-code-academy.vercel.app/api/clients/${clientId}`,
-        updatedClient
-      )
+      .put(`${apiUrl}/api/clients/${clientId}`, updatedClient)
       .then((response) => {
         console.log(response);
         setIsSubmitted(true);
@@ -55,7 +54,7 @@ export default function EditClient() {
 
   const handleConfirmDelete = () => {
     axios
-      .delete(`https://backend-final-atsiskaitymas-code-academy.vercel.app/api/clients/${clientId}`)
+      .delete(`${apiUrl}/api/clients/${clientId}`)
       .then((response) => {
         console.log(response);
         window.location.href = "/clients";

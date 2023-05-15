@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Navbar from "../../Home/Navbar/Navbar";
 import styles from "./RegisterClient.module.css";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export default function RegisterClient() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -27,7 +29,7 @@ export default function RegisterClient() {
     };
 
     axios
-      .post("https://backend-final-atsiskaitymas-code-academy.vercel.app/api/clients", newClient)
+      .post(`${apiUrl}/api/clients`, newClient)
       .then((response) => {
         console.log(response);
         setIsSubmitted(true);

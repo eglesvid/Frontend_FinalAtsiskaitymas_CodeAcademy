@@ -4,13 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../Home/Navbar/Navbar";
 import styles from "./Clients.module.css";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export default function Clients() {
   const [clients, setClients] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("https://backend-final-atsiskaitymas-code-academy.vercel.app/api/clients")
+      .get(`${apiUrl}/api/clients`)
       .then((response) => {
         const sortedClients = response.data.sort((a, b) => {
           return new Date(a.registrationDateTime) - new Date(b.registrationDateTime);
