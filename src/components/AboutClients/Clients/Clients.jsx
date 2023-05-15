@@ -10,7 +10,7 @@ export default function Clients() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/clients")
+      .get("https://backend-final-atsiskaitymas-code-academy.vercel.app/api/clients")
       .then((response) => {
         const sortedClients = response.data.sort((a, b) => {
           return new Date(a.registrationDateTime) - new Date(b.registrationDateTime);

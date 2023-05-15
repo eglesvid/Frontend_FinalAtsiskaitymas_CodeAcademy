@@ -15,7 +15,7 @@ export default function EditClient() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/clients/${clientId}`)
+      .get(`https://backend-final-atsiskaitymas-code-academy.vercel.app/api/clients/${clientId}`)
       .then((response) => {
         setFirstName(response.data.firstName);
         setLastName(response.data.lastName);
@@ -38,7 +38,10 @@ export default function EditClient() {
     };
 
     axios
-      .put(`http://localhost:4000/api/clients/${clientId}`, updatedClient)
+      .put(
+        `https://backend-final-atsiskaitymas-code-academy.vercel.app/api/clients/${clientId}`,
+        updatedClient
+      )
       .then((response) => {
         console.log(response);
         setIsSubmitted(true);
@@ -52,7 +55,7 @@ export default function EditClient() {
 
   const handleConfirmDelete = () => {
     axios
-      .delete(`http://localhost:4000/api/clients/${clientId}`)
+      .delete(`https://backend-final-atsiskaitymas-code-academy.vercel.app/api/clients/${clientId}`)
       .then((response) => {
         console.log(response);
         window.location.href = "/clients";

@@ -12,7 +12,10 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/login", { username, password })
+      .post("https://backend-final-atsiskaitymas-code-academy.vercel.app/login", {
+        username,
+        password,
+      })
       .then((response) => {
         if (response.status === 200) {
           localStorage.setItem("isLoggedIn", "true");

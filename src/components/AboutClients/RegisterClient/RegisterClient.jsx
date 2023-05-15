@@ -27,7 +27,7 @@ export default function RegisterClient() {
     };
 
     axios
-      .post("http://localhost:4000/api/clients", newClient)
+      .post("https://backend-final-atsiskaitymas-code-academy.vercel.app/api/clients", newClient)
       .then((response) => {
         console.log(response);
         setIsSubmitted(true);
