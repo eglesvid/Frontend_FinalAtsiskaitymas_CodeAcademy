@@ -6,3 +6,15 @@
   font-size: 60px;
   line-height: 1.12;
 }
+
+@media (max-width: 768px) {
+  .aboutSection p {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection p {
+    font-size: 30px;
+  }
+}
