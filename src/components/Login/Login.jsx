@@ -11,8 +11,6 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  console.log("API URL:", apiUrl);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
