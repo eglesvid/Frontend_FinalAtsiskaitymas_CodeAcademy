@@ -14,7 +14,7 @@ const images = [
   },
   {
     src: image4,
-    title: 'Cereus Penuvianus',
+    title: 'Cereu Penuvianus',
     subtitle: 'Live the Beauty',
     category: 'Photoshoot / Adv.Campaign',
   },
