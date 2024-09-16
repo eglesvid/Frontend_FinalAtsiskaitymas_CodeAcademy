@@ -1,34 +1,45 @@
-import React, { useState } from "react";
-import styles from "./Gallery.module.css";
+import React, { useState } from 'react';
+import styles from './Gallery.module.css';
+import image3 from '../../../images/image3.jpg';
+import image4 from '../../../images/image4.jpg';
+import image5 from '../../../images/image5.jpg';
+import image6 from '../../../images/image6.jpg';
 
 const images = [
   {
-    src: "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/d1bfa592687519.5e5182cf4dd80.jpg",
-    title: "Dracaena Trifasciata",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaign",
+    src: image3,
+    title: 'Dracaena Trifasciata',
+    subtitle: 'Live the Beauty',
+    category: 'Photoshoot / Adv.Campaign',
   },
   {
-    src: "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ad022592687519.5e5182cf4cea1.jpg",
-    title: "Cereus Penuvianus",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaign",
+    src: image4,
+    title: 'Cereus Penuvianus',
+    subtitle: 'Live the Beauty',
+    category: 'Photoshoot / Adv.Campaign',
   },
   {
-    src: "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/9124f592687519.5e5182cf4e3e9.jpg",
-    title: "Calliope",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaign",
+    src: image5,
+    title: 'Calliope',
+    subtitle: 'Live the Beauty',
+    category: 'Photoshoot / Adv.Campaign',
   },
   {
-    src: "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/cf3bd992687519.5e5182cf4d60c.jpg",
-    title: "Golden Pothos",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaign",
+    src: image6,
+    title: 'Golden Pothos',
+    subtitle: 'Live the Beauty',
+    category: 'Photoshoot / Adv.Campaign',
   },
 ];
 
-function GalleryItem({ src, category, subtitle, title, updateActiveImage, index }) {
+function GalleryItem({
+  src,
+  category,
+  subtitle,
+  title,
+  updateActiveImage,
+  index,
+}) {
   const handleClick = () => {
     updateActiveImage(index);
   };
@@ -41,7 +52,10 @@ function GalleryItem({ src, category, subtitle, title, updateActiveImage, index 
           <h2 className={styles.galleryInfoSubtitle}>{subtitle}</h2>
           <p className={styles.galleryInfoCategory}>{category}</p>
         </div>
-        <div className={styles.galleryItemImage} style={{ backgroundImage: `url(${src})` }}></div>
+        <div
+          className={styles.galleryItemImage}
+          style={{ backgroundImage: `url(${src})` }}
+        ></div>
       </div>
     </div>
   );
@@ -54,7 +68,8 @@ export default function Gallery() {
     <section className={styles.galleryWrap}>
       <div className={styles.gallery}>
         <div className={styles.galleryCounter}>
-          <span>{activeImage + 1}</span> {/* Added +1 to display correct image number */}
+          <span>{activeImage + 1}</span>{' '}
+          {/* Added +1 to display correct image number */}
           <span>/</span>
           <span>{images.length}</span>
         </div>
